@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "dc694e35-c5f6-4ef5-aea6-5504143137e2",
+		"name": "Assignment9_books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37252643"
+	},
+	"item": [
+		{
+			"name": "add explicit collection books",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"collectionName\":\"books\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/collection/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"collection",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add implicit collection Author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jane Austen\",\r\n  \"nationality\": \"British\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/collection/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"collection",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add capped logs collection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"capped\": true,\r\n  \"size\": 1000000, // 1MB in bytes\r\n  \"max\": 50// max number of documents in the collection\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/collection/logs/capped",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"collection",
+						"logs",
+						"capped"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "indexed title book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"capped\": true,\r\n  \"size\": 1000000, // 1MB in bytes\r\n  \"max\": 50// max number of documents in the collection\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/collection/books/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"collection",
+						"books",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert one book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"capped\": true,\r\n  \"size\": 1000000, // 1MB in bytes\r\n  \"max\": 50// max number of documents in the collection\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/collection/books/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"collection",
+						"books",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert new Log",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"capped\": true,\r\n  \"size\": 1000000, // 1MB in bytes\r\n  \"max\": 50// max number of documents in the collection\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/collection/books/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"collection",
+						"books",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert one book Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n [\r\n  {\r\n    \"title\": \"To Kill a Mockingbird\",\r\n    \"author\": \"Harper Lee\",\r\n    \"publishedYear\": 1960,\r\n    \"genre\": [\"Fiction\"]\r\n  },\r\n  {\r\n    \"title\": \"1984\",\r\n    \"author\": \"George Orwell\",\r\n    \"publishedYear\": 1949,\r\n    \"genre\": [\"Dystopian\"]\r\n  },\r\n  {\r\n    \"title\": \"Moby Dick\",\r\n    \"author\": \"Herman Melville\",\r\n    \"publishedYear\": 1851,\r\n    \"genre\": [\"Adventure\"]\r\n  },\r\n  {\r\n    \"title\": \"Brave New World\",\r\n    \"author\": \"Aldous Huxley\",\r\n    \"publishedYear\": 1932,\r\n    \"genre\": [\"Dystopian\", \"science Fiction\"]\r\n  }\r\n]\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update book year depend on title",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Future\",\r\n    \"publishedYear\": 2022 \r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books/Future",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"Future"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for book by title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/title?title=Brave New World",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"title"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Brave New World"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for book by year range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/year?from=1900&to=2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"year"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "1900"
+						},
+						{
+							"key": "to",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for book by year range Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/genre?genre=science Fiction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"genre"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "science Fiction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for book by skip and limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/skip_limit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"skip_limit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for book by check integer year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/year_integer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"year_integer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for book by Exclude Genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/exclude_genres",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"exclude_genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete books by range year",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/before_year?year=1750",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"before_year"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "1750"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by aggregate 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/aggregate1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"aggregate1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by aggregate 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/aggregate2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"aggregate2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by aggregate 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/aggregate3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"aggregate3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by aggregate 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/books/aggregate4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"aggregate4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
